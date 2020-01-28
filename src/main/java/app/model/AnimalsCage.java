@@ -7,15 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component//помечает класс в качестве кандидата для создания Spring бина
 public class AnimalsCage {
 
-    @Autowired
-    @Qualifier("dog")
+    @Autowired//Аннотация позволяет автоматически установить значение поля
+    @Qualifier("dog")//уточнитель, что устанавливать
     private Animal animal;
 
     @Autowired
-    @Qualifier("timer")
     private Timer timer;
 
     public void whatAnimalSay() {
